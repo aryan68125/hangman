@@ -11,6 +11,7 @@ print(Art)
 print("\n")
 Art2 = text2art("game\n",font='block',chr_ignore=True)
 print(Art2)
+
 for i in range(0,1000):
     # initialisation
     engine = pyttsx3.init()
@@ -58,9 +59,11 @@ for i in range(0,1000):
             if lifeDisplay==0:
                 print(f"life left in your little man ={lifeDisplay} \n")
                 print("you could not save your little man. he was hung to death\n")
+                print("the word is = "+chosen_word)
                 print("you lose!!!!\n")
                 engine.say(f"life left in your little man ={lifeDisplay}")
                 engine.say("you could not save your little man. he was hung to death")
+                engine.say("the word is = "+chosen_word)
                 engine.say("you lose!!!!")
                 engine.runAndWait()
                 end_of_game=True
@@ -75,7 +78,7 @@ for i in range(0,1000):
             engine.say(f"life left in your little man ={lifeDisplay}")
             engine.runAndWait()
             end_of_game=True
-        
+             
     q=input("Press q to quit the program or Press enter to continue\n")
     if q=='q' or q=='Q':
         program=text2art("Program") # Return ASCII text (default font) and default chr_ignore=True 
