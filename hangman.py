@@ -1,21 +1,25 @@
 import random
+#import your custom module in your main program
+#hangman_words.py is the module which contain wordList 
+import hangman_words
 #download and install art pip3 install art in your linux machine or mac osX then import art
 from art import *
 # importing the pyttsx library
 import pyttsx3
+Art=text2art("Hangman",font='block',chr_ignore=True) # Return ASCII text with block font
+print(Art)
+print("\n")
+Art2 = text2art("game\n",font='block',chr_ignore=True)
+print(Art2)
 for i in range(0,1000):
-    Art=text2art("Hangman",font='block',chr_ignore=True) # Return ASCII text with block font
-    print(Art)
-    print("\n")
-    Art2 = text2art("game\n",font='block',chr_ignore=True)
-    print(Art2)
     # initialisation
     engine = pyttsx3.init()
-    word_list=["baboon","aditya","aastha","computer","car","vineeta","maths"]
+    #word_list=["baboon","aditya","aastha","computer","car","vineeta","maths"] #old lis for debugging only
     #randomly choose a word from the word_list
-    r=int(random.randint(0,len(word_list)-1))
-    chosen_word=word_list[r]
-    #print(chosen_word) for debugging only
+    #hangman_words.word_list is the syntax through which you can acsses your wordList in your hangman_word.py module
+    r=int(random.randint(0,len(hangman_words.word_list)-1))
+    chosen_word=hangman_words.word_list[r]
+    print(chosen_word) #for debugging only
     #here we are going to create a list which will contain "_" in it
     #the number of "_" will be equal to the number of words in the chosen_word
     display = []
@@ -33,6 +37,9 @@ for i in range(0,1000):
         #ask the user to guess a word and assign that answer to the guess variable
         #make the guess in lowercase
         guess = input("Guess the letter => \n").lower()
+        #checking if the guess is already in display list or not
+        if guess in display:
+            print("you have already guessed the Letter in the mystry word\n")
         #now we will loop through the chosen_word and check wheather the guessed letter is there or not in the chosen_word from the word_list
         #replace the "_" in the display list if guess is present in chosen_word 
         k=0 # index for display list
@@ -71,5 +78,10 @@ for i in range(0,1000):
         
     q=input("Press q to quit the program or Press enter to continue\n")
     if q=='q' or q=='Q':
-        print("program terminated by the user\n")	
+        program=text2art("Program") # Return ASCII text (default font) and default chr_ignore=True 
+        print(program)
+        print("\n")
+        terminated=	text2art("Terminated")
+        print(terminated)
+        print("\n")
         break
