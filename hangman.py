@@ -8,7 +8,7 @@ for i in range(0,1000):
     #randomly choose a word from the word_list
     r=int(random.randint(0,len(word_list)-1))
     chosen_word=word_list[r]
-    print(chosen_word)
+    #print(chosen_word) for debugging only
     #here we are going to create a list which will contain "_" in it
     #the number of "_" will be equal to the number of words in the chosen_word
     display = []
