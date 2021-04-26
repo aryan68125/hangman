@@ -1,7 +1,14 @@
 import random
+#download and install art pip3 install art in your linux machine or mac osX then import art
+from art import *
 # importing the pyttsx library
 import pyttsx3
 for i in range(0,1000):
+    Art=text2art("Hangman",font='block',chr_ignore=True) # Return ASCII text with block font
+    print(Art)
+    print("\n")
+    Art2 = text2art("game\n",font='block',chr_ignore=True)
+    print(Art2)
     # initialisation
     engine = pyttsx3.init()
     word_list=["baboon","aditya","aastha","computer","car","vineeta","maths"]
