@@ -17,7 +17,7 @@ for i in range(0,1000):
     #word_list=["baboon","aditya","aastha","computer","car","vineeta","maths"] #old lis for debugging only
     #randomly choose a word from the word_list
     #hangman_words.word_list is the syntax through which you can acsses your wordList in your hangman_word.py module
-    r=int(random.randint(0,len(hangman_words.word_list)-1))
+    r=int(random.randint(0,(len(hangman_words.word_list)-1)))
     chosen_word=hangman_words.word_list[r]
     #print(chosen_word) #for debugging only
     #here we are going to create a list which will contain "_" in it
