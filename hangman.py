@@ -1,3 +1,4 @@
+from os import system
 import random
 #import your custom module in your main program
 #hangman_words.py is the module which contain wordList 
@@ -11,6 +12,10 @@ print(Art)
 print("\n")
 Art2 = text2art("game\n",font='block',chr_ignore=True)
 print(Art2)
+
+#clear screen function
+def clear():
+    _ = system('clear') #only for linux for windows _ = system('cls')
 
 for i in range(0,1000):
     # initialisation
@@ -38,6 +43,8 @@ for i in range(0,1000):
         #ask the user to guess a word and assign that answer to the guess variable
         #make the guess in lowercase
         guess = input("Guess the letter => \n").lower()
+        #clear the screen
+        clear()
         #checking if the guess is already in display list or not
         if guess in display:
             print("you have already guessed the Letter in the mystry word\n")
